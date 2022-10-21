@@ -10,6 +10,7 @@ import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-do
 import AboutIconLink from './components/AboutIconLink';
 import Card from './components/shared/Card';
 import Post from './components/Post';
+import { FeedbackProvider } from './context/FeedbackContext';
 
 function App(){
 
@@ -26,6 +27,7 @@ function App(){
     }
     
     return <>
+    <FeedbackProvider>
         <Router>
             <Header />
             <div className='container'>
@@ -44,6 +46,7 @@ function App(){
             </div>
             <AboutIconLink />
         </Router>
+    </FeedbackProvider>
     </>
 }
 
