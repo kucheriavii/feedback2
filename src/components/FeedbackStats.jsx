@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types';
+import FeedbackContext from '../context/FeedbackContext';
 
-export default function FeedbackStats({feedback}) {
+export default function FeedbackStats() {
+  
+  const {feedback} = useContext(FeedbackContext)
   //calculete rating averege
   let averege = feedback.reduce((acc, cur) => {
     return acc+cur.rating
@@ -18,6 +21,3 @@ export default function FeedbackStats({feedback}) {
   )
 }
 
-FeedbackStats.propTypes = {
-  feedback: PropTypes.array.isRequired,
-}
