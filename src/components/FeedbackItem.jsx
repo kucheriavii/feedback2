@@ -18,7 +18,6 @@ export default function FeedbackItem({item}) {
         <button className='edit' onClick={() => editFeedback(item)}>
           <FaEdit color='purple'></FaEdit>
         </button>
-        FaEdit
         <div className='text-display'>{item.text}</div>
     </Card>
   )
