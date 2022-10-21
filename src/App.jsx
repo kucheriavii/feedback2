@@ -6,8 +6,10 @@ import FeedbackStats from './components/FeedbackStats';
 import Feedbackform from './components/FeedbackForm';
 import { v4 as uuidv4 } from 'uuid';
 import AboutPage from './pages/About';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-dom';
 import AboutIconLink from './components/AboutIconLink';
+import Card from './components/shared/Card';
+import Post from './components/Post';
 
 function App(){
 
@@ -22,6 +24,7 @@ function App(){
             setFeedback(feedback.filter((item) => item.id !== id));
         } 
     }
+    
     return <>
         <Router>
             <Header />
@@ -34,7 +37,9 @@ function App(){
                     </>}></Route>
                     
                     <Route path='/about' element={<AboutPage />} />
+                    <Route path='/post/:id/:name' element={<Post />} />
                 </Routes>
+                
             </div>
             <AboutIconLink />
         </Router>
