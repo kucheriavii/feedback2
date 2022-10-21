@@ -20,9 +20,6 @@ export default function Post() {
             <h1>Post: {params.id}</h1>
             <h1>Name: {params.name}</h1>
             <button onClick={onClick}>Click</button>
-            <Routes>
-                <Route path="/show" element={<h1>Hello world</h1>} />
-            </Routes>
         </>
   )
 }
